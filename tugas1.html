@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> TEST INPUT</h1>
+    <p>input this one</p>
+    <input type="text" id="input">
+    <button>submit</button>
+    <div id="content"></div>
+</body>
+
+</html>
+
+<script>
+
+    let data = []
+    let content = document.getElementById('content');
+
+    // function loop() {
+    //     for (let index = 0; index < data.length; index++) {
+
+    //     }
+    // }
+
+    button = document.querySelector('button');
+    let txt;
+    button.addEventListener('click', function () {
+        input = document.querySelector('input');
+        if (input.value == 0) {
+            txt = 'invalid input'
+        } else if (input.value % 3 == 0 && input.value % 5 == 0) {
+            txt = 'FizzBuzz!'
+        } else if (input.value % 3 == 0) {
+            txt = 'Buzz!'
+        } else if (input.value % 5 == 0) {
+            txt = 'Fizz!'
+        } else {
+            txt = input.value
+        }
+        let p = document.createElement("p");
+        let text = document.createTextNode(txt);
+        p.appendChild(text);
+        content.appendChild(p);
+    })
+</script>
